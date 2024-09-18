@@ -32,8 +32,8 @@ resource "linode_instance" "devops_nodes" {
       type        = "ssh"
       user        = "root"
       private_key = chomp(file(var.ssh_key))
-      host  = self.ip_address
-      agent = false
+      host        = self.ip_address
+      agent       = false
     }
   }
 
@@ -44,8 +44,8 @@ resource "linode_instance" "devops_nodes" {
       type        = "ssh"
       user        = "root"
       private_key = chomp(file(var.ssh_key))
-      host  = self.ip_address
-      agent = false
+      host        = self.ip_address
+      agent       = false
     }
   }
 
@@ -70,8 +70,8 @@ resource "linode_instance" "devops_nodes" {
       type        = "ssh"
       user        = "root"
       private_key = chomp(file(var.ssh_key))
-      host  = self.ip_address
-      agent = false
+      host        = self.ip_address
+      agent       = false
     }
   }
 }

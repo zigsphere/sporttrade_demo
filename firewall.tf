@@ -7,7 +7,7 @@ resource "linode_firewall" "internal_devops_nodes" {
     protocol = "TCP"
     ports    = "80"
     #ipv4     = ["${linode_nodebalancer.devops_bookmarks.ipv4}/32"] # This does not work per Linode Support
-    ipv4     = ["192.168.255.0/24"]
+    ipv4 = ["192.168.255.0/24"]
   }
 
   # Allow SSH for troubleshooting purposes, but not required
@@ -26,5 +26,5 @@ resource "linode_firewall" "internal_devops_nodes" {
   inbound_policy  = "DROP"
 
   linodes = linode_instance.devops_nodes[*].id
-  
+
 }
