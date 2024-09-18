@@ -18,7 +18,7 @@ Using the my own provided `terraform.tfvars` file and utilizing the default vari
 ## Considerations
 There is so much more that can be added to this, but were not implemented
 
-- SSL (443). If I had my own CA and secrets manager, I could provide the load balancer a cert and key to make this SSL.
+- SSL (443). If I had my own CA and secrets manager, I could provide the load balancer a cert and key to make this SSL. You can potentially use Let's Encrypt, but DNS propagation is slow and it gets tricky using this type of setup. 
 - Each web node builds the container locally. A container registry would decrease the web node build time dramatically. 
 - Terraform modules could be used here, but for the sake of time, were not used. This is a single app, so modules weren't used.
 - For the domain, the entire "devopsbookmarks.com" zone is not managed with Terraform, so this is why the ID of this particular zone is hardcoded in the `domain.tf` file. Otherwise, the ID would be pulled automatically
